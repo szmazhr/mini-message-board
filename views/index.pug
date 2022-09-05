@@ -16,7 +16,7 @@ block content
 
         div(class="message-time")
           - const date = new Date(parseInt(message.added));
-          span= date.toLocaleString()
+          span= date.toString()
 
         div(class="message-text")
           i(class="fa fa-quote-left")
@@ -24,4 +24,3 @@ block content
 
         div(class="message-author")
           span= message.user || "Anonymous"
-
