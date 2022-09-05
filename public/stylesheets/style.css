@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+body {
+  background-color: #333;
+  font-family: "Raleway", sans-serif;
+}
+
+.main-header {
+  background-color: #4990a5;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-header span {
+  color: rgb(219, 219, 219);
+}
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 50px;
+}
+
+.message-box:hover .message-text {
+  color: #4990a5;
+}
+
+.add-new,
+.message-box {
+  background-color: whitesmoke;
+  height: 300px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-new {
+  --color: rgba(51, 51, 51, 0.8);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--color);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.add-new::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  border: 5px solid var(--color);
+  box-sizing: border-box;
+}
+
+.add-new:hover {
+  --color: #4990a5;
+}
+
+.add-new i {
+  font-size: 2em;
+}
+
+.message-time {
+  font-size: smaller;
+  opacity: 0.6;
+  /* text-decoration: underline; */
+  padding: 4px 5px;
+}
+
+.message-text i {
+  font-size: 1em;
+  opacity: 0.9;
+  margin-right: 0.4em;
+}
+
+.message-text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.75em;
+  color: #333;
+}
+
+.message-author {
+  text-align: end;
+  font-size: 1.2rem;
+  padding: 20px;
+
+}
+
+.message-author::before {
+  content: '-';
+  margin-right: 3px;
+}
+
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 8rem;
+  border-radius: 0.8rem;
+  padding: 3rem 4rem;
+  background: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+[name="messageText"],
+[name="messageUser"] {
+  border: 1px solid silver;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+}
+
+
+[name="messageText"] {
+  resize: vertical;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+
+[name="messageUser"] {
+  margin-bottom: 3rem;
+  border-top: none;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+[name="messageText"]:focus,
+[name="messageUser"]:focus {
+  outline-color: #4990a5;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 8px;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+button.btn {
+  background: #4990a5;
+}
+
+a.btn {
+  text-decoration: none;
+  background-color: #333;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}

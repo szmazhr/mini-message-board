@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+  include header
+
+  section(class="wrapper")
+
+    a(href="/new" class="add-new" title="Add new message")
+      i(class="fa fa-plus")
+      span Add New
+
+    each message in messages
+
+      article(class="message-box")
+
+        div(class="message-time")
+          - const date = new Date(parseInt(message.added));
+          span= date.toLocaleString()
+
+        div(class="message-text")
+          i(class="fa fa-quote-left")
+          span= message.text
+
+        div(class="message-author")
+          span= message.user || "Anonymous"
+

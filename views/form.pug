@@ -1,0 +1,19 @@
+extends layout
+
+
+block content
+
+  include header
+
+  section(class="form-container")
+
+    form(method="POST" action="/new" )
+
+      textarea(name="messageText" rows=4 placeholder="Write you message" maxLength=140)
+
+      input(type="text" name="messageUser" placeholder="Your Name")
+
+      div(class="action")
+      
+        button(type="submit" class="btn") Submit
+        a(href="/" class="btn") Back to home
