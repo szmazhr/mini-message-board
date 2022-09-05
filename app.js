@@ -10,8 +10,11 @@ let newRouter = require('./routes/newMessage');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+const templateEngines = ['pug', 'ejs']
+const selected = 1;
+
+app.set('views', path.join(__dirname, 'views', templateEngines[selected]));
+app.set('view engine', templateEngines[selected]);
 
 app.use(logger('dev'));
 app.use(express.json());

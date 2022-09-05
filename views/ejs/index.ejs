@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head'); %>
+
+  <body>
+    <%- include('header'); %>
+
+      <section class="wrapper">
+
+        <a href="/new" class="add-new" title="Add new message">
+          <i class="fa fa-plus"></i>
+          <span>Add New</span>
+        </a>
+        <% for(message of messages){ %>
+          <article class="message-box">
+
+            <div class="message-time">
+              <% const date=new Date(parseInt(message.added)) %>
+                <span>
+                  <%= date.toString() %>
+                </span>
+            </div>
+
+            <div class="message-text">
+              <i class="fa fa-quote-left"></i>
+              <span>
+                <%= message.text %>
+              </span>
+            </div>
+
+            <div class="message-author">
+              <span>
+                <%= message.user %>
+              </span>
+            </div>
+
+          </article>
+          <% } %>
+
+
+      </section>
+  </body>
+
+</html>

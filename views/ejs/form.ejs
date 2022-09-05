@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head'); %>
+
+  <body>
+    <%- include('header'); %>
+
+      <section class="form-container">
+
+        <form action="/new" method="post">
+
+          <textarea name="messageText" rows=4 placeholder="Write you message" maxLength=140></textarea>
+          <input type="text" name="messageUser" placeholder="Your Name">
+          <div class="action">
+            <button type="submit" class="btn">Submit</button>
+            <a href="/" class="btn">Back to home</a>
+          </div>
+        </form>
+      </section>
+  </body>
+
+</html>
