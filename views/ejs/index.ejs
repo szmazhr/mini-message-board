@@ -15,10 +15,9 @@
           <article class="message-box">
 
             <div class="message-time">
-              <% const date=new Date(parseInt(message.added)) %>
-                <span>
-                  <%= date.toString() %>
-                </span>
+              <span>
+                <%= message.added %>
+              </span>
             </div>
 
             <div class="message-text">
