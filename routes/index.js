@@ -6,7 +6,7 @@ const { lookup } = require('geoip-lite');
 
 function formatDate(array, ip){
   const ipLookup = lookup(ip);
-  return array.map(item => ({...item, added: DateTime.fromJSDate(new Date(parseInt(item.added))).setLocale('en-US').toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}))
+  return array.map(item => ({...item, added: DateTime.fromJSDate(new Date(parseInt(item.added))).setLocale('en-US').setZone(ipLookup ? ipLookup.timezone : 'Asia/Kolkata').toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}))
 }
 
 function sortByDate(array){
