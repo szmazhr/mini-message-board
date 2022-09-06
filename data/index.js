@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { DateTime } = require("luxon");
+
+
 
 const { parse } = require('csv-parse')
 const { stringify } = require("csv-stringify");
@@ -13,14 +14,12 @@ const messages = [];
 const stringifier = stringify({ header: false, columns: ["text","user","added"] });
 stringifier.pipe(writableStream);
 
-function formatDate(timestampString){
-  return DateTime.fromJSDate(new Date(parseInt(timestampString))).toLocaleString(DateTime.DATETIME_MED)
-}
+
 
 fs.createReadStream(filename)
   .pipe(parse({delimiter: ',', from_line: 2}))
   .on("data", function (row) {
-    messages.push({text:row[0], user:row[1], added:formatDate(row[2])});
+    messages.push({text:row[0], user:row[1], added:row[2]});
   })
   .on("end", function () {
     console.log("data loaded");
